@@ -13,6 +13,7 @@ const Cell = (props) => {
 
     if ((ctx.cor.start.x === row && ctx.cor.start.y === col) ||
         (ctx.cor.end.x === row && ctx.cor.end.y === col)) {
+            console.log(ctx.visited);
         isTerminal = "terminal"
     }
 
@@ -40,7 +41,27 @@ const Cell = (props) => {
                 onMouseUp={()=>ctx.mouseHandler(false)}
                 onMouseOver={()=>ctx.down?ctx.setVisited(row,col,-2):ctx.down}
                 onClick={(() => { 
-                    if (ctx.visited[row][col] == 0) {
+                    if(ctx.cor.start.x==row && ctx.cor.start.y==col){
+                        let cor={...ctx.cor,start:{x:-1,y:-1}};
+                        ctx.setCor(cor);
+                        ctx.setWeight(row,col,1);
+                    }
+                    else if(ctx.cor.end.x==row && ctx.cor.end.y==col){
+                        let cor={...ctx.cor,end:{x:-1,y:-1}};
+                        ctx.setCor(cor);
+                        ctx.setWeight(row,col,1);
+                    }
+                    else if(ctx.cor.start.x==-1){
+                        console.log('hi');
+                        let cor={...ctx.cor,start:{x:row,y:col}} 
+                        ctx.setCor(cor);
+                        ctx.setWeight(row,col,1);
+                    }else if(ctx.cor.end.x==-1){
+                        let cor={...ctx.cor,end:{x:row,y:col}} 
+                        ctx.setCor(cor);
+                        ctx.setWeight(row,col,1);
+                    }
+                    else if (ctx.visited[row][col] == 0) {
                         console.log("clicked");
                         ctx.setVisited(row, col, -2);
                     }

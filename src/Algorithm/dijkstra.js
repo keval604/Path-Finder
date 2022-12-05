@@ -50,6 +50,7 @@ export const dijkstra=(visitCtx,gridCtx,speed)=>{
         var timer=setInterval(()=>{
             if(curr[0]==cor.start.x && curr[1]==cor.start.y){ 
                 visitCtx.setVisited(curr[0],curr[1],-1);
+                console.log("helll",curr,cor);
                 clearInterval(timer);
                 return;
             }
@@ -89,7 +90,7 @@ export const dijkstra=(visitCtx,gridCtx,speed)=>{
         
                     if(newCorr.x===cor.end.x && newCorr.y===cor.end.y){
                         visitCtx.setVisited(cor.start.x,cor.start.y,-1);
-                            
+                        console.log(visitCtx.visited);
                         karoPrint();
                         // isEnd=true;
                         return;

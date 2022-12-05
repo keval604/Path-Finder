@@ -20,13 +20,14 @@ const GridButton = (props)=>{
                 if(visitCtx.visited[i][j]< -2)
                     visitCtx.setVisited(i,j,0);
         }
-            // console.log("cleared");
+            console.log("cleared");
         visitCtx.setVisited(cor.start.x,cor.start.y,-1);
         visitCtx.setVisited(cor.end.x,cor.end.y,-1);
     }
 
     function execute(){
         // console.log("hi");
+        if(props.isCord){
         clearVisited();
             switch(algorithm){
                 case 'none':
@@ -47,6 +48,7 @@ const GridButton = (props)=>{
                 default:
                     break;
             }
+        }else alert("set the cordinates");
     }
 
     return (

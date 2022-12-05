@@ -14,14 +14,12 @@ const ClearGrid=()=>{
     function generate(visitCtx){
         for(let i=0;i<noRows;i++){
             for(let j=0;j<noCols;j++){
-                if((i==cor.start.x && j==cor.start.y) || (i==cor.end.x
-                    && j==cor.end.y)) visitCtx.setVisited(i,j,-1);
-                else{ 
-                    visitCtx.setVisited(i,j,0);
-                    visitCtx.setWeight(i,j,0);
-                }
+                visitCtx.setVisited(i,j,0);
+                visitCtx.setWeight(i,j,1);
             }
         }
+        // console.log(visitCtx.weight);
+        // console.log(visitCtx.visited);
     }
     // console.log(visitCtx.visited);
     
