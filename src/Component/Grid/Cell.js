@@ -23,7 +23,7 @@ const Cell = (props) => {
         color="yellow";
         vis="anime";
     }
-    else if (ctx.weight[row][col] === 1000000)
+    else if (ctx.visited[row][col] === -2)
         color = "#1f0914";  //block
     else if (ctx.visited[row][col] === -1)
         color = "selmon"; //end point
