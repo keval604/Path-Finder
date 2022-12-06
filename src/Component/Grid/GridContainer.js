@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import Grid from '../Grid/Grid';
 import Header from '../Header/Header';
@@ -19,17 +19,27 @@ const GridContainer = (props)=>{
         }
     }
 
+    
+
+    const initialStartCor={x:-1,y:-1};
+    const initialEndCor={x:-1,y:-1};
+
     const initialCor={
-        start:{x:2,y:2},
-        end:{x:11,y:12}
+        start:initialStartCor,
+        end:initialEndCor
     }
 
     const [vis,setVis]=useState(visArray);
+    const [isCord,setIsCord]=useState(false);
     const [weight,setWeight]=useState(weightArray);
     const [down, setDown] = useState(false);
     const[speed, setSpeed] = useState(1);
-    
+
     const [cor,setCor]=useState(initialCor);
+
+    useEffect(()=>{
+        if(cor.start.x!=-1 && cor.end.x!=-1) setIsCord(true);
+    },[cor]);
     
     const visitHandler=(row,col,value)=>{
         let newArray=[...vis];
@@ -62,6 +72,7 @@ const GridContainer = (props)=>{
             weight:weight,
             setWeight:weightHandler,
             cor:cor,
+            setCor:setCor,
             mouseHandler:mouseHandler,
             down: down,
             speed: speed,
@@ -70,7 +81,7 @@ const GridContainer = (props)=>{
         >
             
                 <GridInfoContext.Provider value={{ cor: cor, noRows: { rows }, noCols: { cols } }}>
-                <Header typeHandler={props.typeHandler} type="grid" speed={speed}/>
+                <Header typeHandler={props.typeHandler} type="grid" speed={speed} isCord={isCord}/>
                 <Grid noRows={rows} noCols={cols} />
             </GridInfoContext.Provider>
         </VisitContext.Provider> 
