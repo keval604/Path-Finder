@@ -73,7 +73,7 @@ const Header=(props)=>{
                         {props.type==="grid" &&
                             <>
                                 {/* <li><div class="nav-link"><SpeedController speed={selectedSpeed} speedHandler={SpeedHandler}></SpeedController></div></li> */}
-                                <Nav.Link><GridButton selectedAlgo={selectedAlgo}  ></GridButton></Nav.Link>
+                                <Nav.Link><GridButton selectedAlgo={selectedAlgo} isCord={props.isCord} ></GridButton></Nav.Link>
                                 <Nav.Link><Form.Label className="text-white">Speed</Form.Label></Nav.Link>
                                 <Nav.Link><SpeedController ></SpeedController></Nav.Link>
                                 <Nav.Link><RandomGrid></RandomGrid></Nav.Link>
