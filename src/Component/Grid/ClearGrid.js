@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { GridInfoContext, VisitContext } from '../Grid/GridContainer';
+import Button from 'react-bootstrap/Button';
 
 let generateClearGrid;
 
@@ -30,7 +31,8 @@ const ClearGrid=()=>{
     }
 
     return (
-        <button class="btn btn-lg btn-primary px-4" onClick={generateClearGrid}>Clear Grid</button>
+        <Button onClick={generateClearGrid}>Clear Grid </Button>
+        // {/* <button class="btn btn-lg btn-primary px-4" onClick={generateClearGrid}>Clear Grid</button> */}
     );
 }
 export { generateClearGrid };

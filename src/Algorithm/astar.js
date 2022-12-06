@@ -47,7 +47,7 @@ export const astar = (visitCtx, gridCtx, speed) => {
         var timer=setInterval(()=>{
             // console.log(curr);
             if (curr[0] == cor.start.x && curr[1] == cor.start.y) { 
-                console.log("inside if condition", curr);
+                // console.log("inside if condition", curr);
                 visitCtx.setVisited(curr[0],curr[1],-1);
                 clearInterval(timer);
                 return;

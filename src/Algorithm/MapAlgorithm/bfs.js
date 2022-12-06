@@ -4,7 +4,7 @@ import { getWays,getCoordinate } from "./queryFunctions";
 const qop = require('@derhuerst/query-overpass');
 
 export const mapBFS =  (mapCtx) => {
-    console.log("yolo");
+    // console.log("yolo");
     const sourceId = 5233390625;
     const destinationId = 5204890047;//5233397149  5204890047
 
@@ -28,7 +28,7 @@ export const mapBFS =  (mapCtx) => {
                 let cord=await getCoordinate(id);
                 if(index>0 ){
                    adjNode=y[i].nodes[index-1];
-                   console.log("adjid",adjNode);
+                   // console.log("adjid",adjNode);
                    if(visited[adjNode]!=true){
                         visited[adjNode]=true;
                        queue.push(adjNode);

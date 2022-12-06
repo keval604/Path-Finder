@@ -4,7 +4,9 @@ import { dijkstra } from "../../Algorithm/dijkstra";
 
 import {bfs} from "../../Algorithm/bfs";
 import {dfs} from "../../Algorithm/dfs";
-import {astar} from "../../Algorithm/astar";
+import { astar } from "../../Algorithm/astar";
+
+import Button from 'react-bootstrap/Button';
 
 const GridButton = (props)=>{
    
@@ -50,7 +52,8 @@ const GridButton = (props)=>{
     }
 
     return (
-        <button class="btn btn-lg btn-primary px-4" onClick={execute}>Visualize {algorithm}</button>
+        <Button as="button" size="md" onClick={execute}> Visualize {algorithm} </Button>
+        // {/* <button class="btn btn-lg btn-primary px-4" onClick={execute}>Visualize {algorithm}</button> */}
     );
 };
 

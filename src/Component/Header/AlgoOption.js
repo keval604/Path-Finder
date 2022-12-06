@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import '../../bootstrap5/css/bootstrap.min.css';
+import Form from 'react-bootstrap/Form';
 
 const AlgoOption = (props) => {
     const selectRef=useRef();
@@ -8,7 +8,7 @@ const AlgoOption = (props) => {
         props.handler(selectRef.current.selectedOptions[0].value);
     }
     return (
-        <select class= "form-select form-select-lg" ref={selectRef} onChange={changeAlgo} >
+        <Form.Select ref={selectRef} onChange={changeAlgo} >
             {   props.optionType != "container" &&
                 <>
                     <option value="none">Algorithm</option>
@@ -25,7 +25,7 @@ const AlgoOption = (props) => {
                     <option value="map" selected={props.selection=="map"}>Map</option>
                 </>
             }
-        </select>
+        </Form.Select>
     );
 }
 

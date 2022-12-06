@@ -4,6 +4,8 @@ import { mapBFS } from "../../Algorithm/MapAlgorithm/bfs";
 import { mapDijkstra } from "../../Algorithm/MapAlgorithm/dijkstra";
 import { mapAstar } from "../../Algorithm/MapAlgorithm/MapAstar";
 
+import Button from 'react-bootstrap/Button';
+
 const MapButton = (props)=>{
     const mapCtx = useContext(MapContext);
     let algorithm=props.selectedAlgo === "none"?'':props.selectedAlgo;
@@ -32,7 +34,8 @@ const MapButton = (props)=>{
     
 
     return (
-        <button class="btn btn-lg btn-primary px-4" onClick={execute}>Visualize {algorithm}</button>
+        <Button onClick={execute} >Visualize {algorithm}</Button>
+        // {/* <button class="btn btn-lg btn-primary px-4" onClick={execute}>Visualize {algorithm}</button> */}
     );
 };
 

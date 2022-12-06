@@ -11,7 +11,7 @@ const Grid=(props)=>{
                 <div className="">
                     {
                         arr.map((ele, index) => (
-                            <Rows
+                            <Rows 
                                 key={index}
                                 rowNo={ele}
                                 noCols={props.noCols}

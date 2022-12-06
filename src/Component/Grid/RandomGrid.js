@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { GridInfoContext, VisitContext } from "../Grid/GridContainer";
 import { generateClearGrid } from "./ClearGrid";
+import Button from 'react-bootstrap/Button';
 
 const RandomGrid = () => {
     const visitCtx=useContext(VisitContext);
@@ -43,8 +44,8 @@ const RandomGrid = () => {
     }
     // console.log(visitCtx.weight);
     return (
-
-        <button class="btn btn-lg btn-primary px-4" onClick={generateRandomGrid}>Generate RandomGrid</button>
+        <Button onClick={generateRandomGrid} > Generate RandomGrid </Button>
+        // {/* <button class="btn btn-lg btn-primary px-4" onClick={generateRandomGrid}>Generate RandomGrid</button> */}
     );
 }
 

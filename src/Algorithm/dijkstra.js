@@ -23,7 +23,7 @@ export const dijkstra=(visitCtx,gridCtx,speed)=>{
     const findMinVertex = () => {
         const sp = visitCtx.speed;
         // console.log(visitCtx);
-        console.log(sp);
+        // console.log(sp);
         return new Promise((resolve, reject) => {
             setTimeout(() => {
                 let minDis=Number.MAX_SAFE_INTEGER,minVer=null;
