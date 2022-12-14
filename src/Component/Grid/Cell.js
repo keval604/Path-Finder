@@ -1,5 +1,4 @@
 import { useContext } from 'react';
-// import '../../bootstrap5/css/bootstrap.min.css';
 import { VisitContext } from './GridContainer';
 import './Cell.css';
 

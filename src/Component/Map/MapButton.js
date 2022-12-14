@@ -21,9 +21,10 @@ const MapButton = (props)=>{
             case 'BFS':
                 mapBFS(mapCtx);
                 break;
-            // case 'DFS':
+            case 'DFS':
+                alert("DFS cannot be implemented");
             //     dfs(mapCtx);
-            //     break;
+                break;
             case 'A*':
                 mapAstar(mapCtx);
                 break;

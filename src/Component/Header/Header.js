@@ -29,39 +29,6 @@ const Header=(props)=>{
     }
 
     return(
-        // <div class="">
-        // <div className=''>
-        //     <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-        //         <div class="nav-brand text-white"><h1> Visualizer </h1></div>
-        //         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        //         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        //         <span class="navbar-toggler-icon"></span>
-        //         </button>
-    
-        //         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        //         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        //             <li><div class="nav-link"><AlgoOption selection={props.type} handler={props.typeHandler} optionType="container"></AlgoOption></div></li>
-        //             <li><div class="nav-link"><AlgoOption selection={selectedAlgo} handler={AlgorithmHandler} optionType="algorithm"></AlgoOption></div></li>
-        //                     {/* <h3>{ props.speed}</h3> */}
-                    // {props.type=="grid" &&
-                    //     <>
-                    //         <li><div class="nav-link"><GridButton selectedAlgo={selectedAlgo}  ></GridButton></div></li>
-                    //         {/* <li><div class="nav-link"><SpeedController speed={selectedSpeed} speedHandler={SpeedHandler}></SpeedController></div></li> */}
-                    //         <li><div class="nav-link"><SpeedController  ></SpeedController></div></li>
-                    //         <li><div class="nav-link"><RandomGrid></RandomGrid></div></li>
-                    //         <li><div class="nav-link"><ClearGrid></ClearGrid></div></li>
-                    //     </>
-                    // }
-                    // {
-                    //     props.type=="map" &&
-                    //     <li><div class="nav-link"><MapButton selectedAlgo={selectedAlgo}  ></MapButton></div></li>
-                    // }
-        //         </ul>
-        //         </div>
-        //     </nav>
-        //     </div>
-        // </div>
-
         <Navbar bg="dark" variant="dark" expand="lg">
             {/* <Container className=""> */}
                 <Navbar.Brand className="mx-5" style={{fontSize : 30}}>Visualizer</Navbar.Brand>
@@ -72,7 +39,6 @@ const Header=(props)=>{
                             <Nav.Link><AlgoOption selection={selectedAlgo} handler={AlgorithmHandler} optionType="algorithm"></AlgoOption></Nav.Link>
                         {props.type==="grid" &&
                             <>
-                                {/* <li><div class="nav-link"><SpeedController speed={selectedSpeed} speedHandler={SpeedHandler}></SpeedController></div></li> */}
                                 <Nav.Link><GridButton selectedAlgo={selectedAlgo} isCord={props.isCord} ></GridButton></Nav.Link>
                                 <Nav.Link><Form.Label className="text-white">Speed</Form.Label></Nav.Link>
                                 <Nav.Link><SpeedController ></SpeedController></Nav.Link>
@@ -88,7 +54,6 @@ const Header=(props)=>{
                         }
                     </Nav>
                 </Navbar.Collapse>
-            {/* </Container> */}
         </Navbar>
 
     );

@@ -3,14 +3,7 @@ export const bfs=(visitCtx,gridCtx,speed)=>{
     const cor=gridCtx.cor; //terminal cordinate;
     const noRows=gridCtx.noRows.rows;       //total no of rows and cols;
     const noCols=gridCtx.noCols.cols;
-    // console.log(gridCtx);
-    // let dis=[];     //2d infinity
-    // for (let i = 0; i < noRows; i++) {
-    //     dis.push([]);
-    //     for (let j = 0; j < noCols; j++) {
-    //         dis[i].push(Number.MAX_SAFE_INTEGER);
-    //     }
-    // }
+    
 
     let parent = (new Array(noRows)).fill().map(function(){ return new Array(noCols).fill([-1,-1]);});  
     
@@ -19,11 +12,9 @@ export const bfs=(visitCtx,gridCtx,speed)=>{
     }
 
     const printPath=()=>{
-        let curr=parent[cor.end.x][cor.end.y];
-        // console.log(curr);  
+        let curr=parent[cor.end.x][cor.end.y]; 
 
         var timer=setInterval(()=>{
-            // console.log(curr,parent[curr[0]][curr[1]]);
             if(curr[0]==cor.start.x && curr[1]==cor.start.y){ 
                 visitCtx.setVisited(curr[0],curr[1],-1);
                 clearInterval(timer);
@@ -42,7 +33,6 @@ export const bfs=(visitCtx,gridCtx,speed)=>{
 
                 for(let j=0;j<4;j++){
                     let ni=curr[0]+dir[j][0],nj=curr[1]+dir[j][1];
-                    // console.log(ni,nj);
                     if(isInRange({ni,nj})){
                         if(visitCtx.visited[ni][nj]==-1 && ni!=cor.start.x && nj!=cor.start.y){
                             parent[ni][nj]=[curr[0],curr[1]];
@@ -78,7 +68,7 @@ export const bfs=(visitCtx,gridCtx,speed)=>{
                 }
 
             }
-            // console.log(queue.length);
+           
         }
     }
 

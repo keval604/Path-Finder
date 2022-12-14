@@ -19,10 +19,7 @@ const ClearGrid=()=>{
                 visitCtx.setWeight(i,j,1);
             }
         }
-        // console.log(visitCtx.weight);
-        // console.log(visitCtx.visited);
     }
-    // console.log(visitCtx.visited);
     
     generateClearGrid = () => {
         generate(visitCtx);
@@ -30,7 +27,6 @@ const ClearGrid=()=>{
 
     return (
         <Button onClick={generateClearGrid}>Clear Grid </Button>
-        // {/* <button class="btn btn-lg btn-primary px-4" onClick={generateClearGrid}>Clear Grid</button> */}
     );
 }
 export { generateClearGrid };

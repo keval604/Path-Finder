@@ -28,12 +28,11 @@ const GridButton = (props)=>{
     }
 
     function execute(){
-        // console.log("hi");
         if(props.isCord){
         clearVisited();
             switch(algorithm){
                 case 'none':
-                    // alert("algorithm select karle pahle");
+                    alert("Select the algorithm");
                     break;
                 case 'dijkstra':
                     dijkstra(visitCtx,gridCtx,speed);
@@ -55,7 +54,6 @@ const GridButton = (props)=>{
 
     return (
         <Button as="button" size="md" onClick={execute}> Visualize {algorithm} </Button>
-        // {/* <button class="btn btn-lg btn-primary px-4" onClick={execute}>Visualize {algorithm}</button> */}
     );
 };
 

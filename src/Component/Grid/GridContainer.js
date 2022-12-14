@@ -19,8 +19,6 @@ const GridContainer = (props)=>{
         }
     }
 
-    
-
     const initialStartCor={x:-1,y:-1};
     const initialEndCor={x:-1,y:-1};
 
@@ -44,7 +42,6 @@ const GridContainer = (props)=>{
     const visitHandler=(row,col,value)=>{
         let newArray=[...vis];
         newArray[row][col]=value;
-        // console.log(newArray);
         setVis(newArray);
     }
 

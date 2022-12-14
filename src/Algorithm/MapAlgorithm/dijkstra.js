@@ -8,8 +8,6 @@ export const mapDijkstra =  (mapCtx) => {
    let distance =new Array(); 
    let parent =new Array();
 
-   // console.log(getDistance([23.129448208002582, 72.54414621480198], [23.129418599311766,72.54283745519845]));
-
    const findMinVertex=(distance)=>{
       let minVertex,minDist=Number.MAX_SAFE_INTEGER;
 
@@ -25,14 +23,7 @@ export const mapDijkstra =  (mapCtx) => {
       return minVertex;
    }
    
-   async function sleep(ms) {
-      return new Promise((resolve) => setTimeout(resolve, ms));
-   }
-
-
    async function executeDijkstra() {
-      // const sourceId = getNodeId(mapCtx.source);
-      
       distance[sourceId]=0;
       
       while(true){

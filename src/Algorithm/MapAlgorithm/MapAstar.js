@@ -14,7 +14,6 @@ export const mapAstar =  (mapCtx) => {
    
       for (const key in distance) {
          if (visited[key] != true) {
-           
             const value = distance[key] + getDistance([cords[key].lat, cords[key].lon], destinationCords);
 
             if(value<minDist){
@@ -28,7 +27,6 @@ export const mapAstar =  (mapCtx) => {
 
 
    async function executeAstar() {
-      // const sourceId = getNodeId(mapCtx.source);
       destinationCords = await getCoordinate(destinationId);
       sourceCords = await getCoordinate(sourceId);
       

@@ -1,11 +1,8 @@
-import { useContext } from "react";
-import { VisitContext,GridInfoContext } from "../App";
-
 export const dijkstra=(visitCtx,gridCtx,speed)=>{
     const cor=gridCtx.cor; //terminal cordinate;
     const noRows=gridCtx.noRows.rows;       //total no of rows and cols;
     const noCols=gridCtx.noCols.cols;
-    // console.log(gridCtx);
+
     let dis=[];     //2d infinity
     for (let i = 0; i < noRows; i++) {
         dis.push([]);
@@ -22,8 +19,7 @@ export const dijkstra=(visitCtx,gridCtx,speed)=>{
 
     const findMinVertex = () => {
         const sp = visitCtx.speed;
-        // console.log(visitCtx);
-        // console.log(sp);
+       
         return new Promise((resolve, reject) => {
             setTimeout(() => {
                 let minDis=Number.MAX_SAFE_INTEGER,minVer=null;
@@ -37,14 +33,14 @@ export const dijkstra=(visitCtx,gridCtx,speed)=>{
                         }
                     }   
                 }
-                // console.log(minVer);
+                
                 resolve(minVer);
             },sp);
         });
         
     }
 
-    const karoPrint=()=>{
+    const printPath=()=>{
         let curr=parent[cor.end.x][cor.end.y];
 
         var timer=setInterval(()=>{
@@ -60,16 +56,13 @@ export const dijkstra=(visitCtx,gridCtx,speed)=>{
     }
 
     const executeDijkstra=async()=>{
-        // console.log("idhar");
+    
         dis[cor.start.x][cor.start.y]=0;
 
         while(true){
-            // let isEnd=false;
-
+            
             let u = await findMinVertex();
-            // console.log(u);
             if(u==null){ 
-                // isEnd=true;
                 return;
             }
             
@@ -91,17 +84,13 @@ export const dijkstra=(visitCtx,gridCtx,speed)=>{
                     if(newCorr.x===cor.end.x && newCorr.y===cor.end.y){
                         visitCtx.setVisited(cor.start.x,cor.start.y,-1);
                         console.log(visitCtx.visited);
-                        karoPrint();
-                        // isEnd=true;
+                        printPath();
                         return;
                     }
                 }
             }
-            
-            // if(isEnd) return;
-                // break;
+           
         }
     }
     executeDijkstra();
-    // return {executeDijkstra}
 }

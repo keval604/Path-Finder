@@ -26,8 +26,6 @@ export const mapAStar =  (mapCtx) => {
    }
   
    async function executeAStar() {
-      // const sourceId = getNodeId(mapCtx.source);
-      
       distance[sourceId]=0;
       distance[destinationId]=10000;
       
